@@ -12,22 +12,23 @@
     </header>
 
     <form>
+        <script src="script.js"></script>
         <h1>Регистрация</h1>
         <div class="reg">
             <label>Логин</label>
-            <input type="text">
+            <input id="loginInp" type="text">
         </div>
         <div class="reg">
             <label>Пароль</label>
-            <input type="password">
+            <input id="passInp" type="password">
         </div>
         <div class="reg">
             <label>Повторите пароль</label>
-            <input type="password">
+            <input id="passInpAgn" type="password">
         </div>
         <a href="otherpage.html">Забыли пароль?</a>
         <div class="reg">
-            <button>Зарегестрироваться</button>
+            <button type="button" onclick="isValid()">Зарегестрироваться</button>
         </div>
         <label>Темная тема<input type="checkbox" checked> </label>
     </form>
