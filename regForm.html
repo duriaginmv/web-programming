@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 <center>
+
     <header>
         <a href="otherpage.html"> <img src="logo.png" alt="Тут лого )"> </a>
     </header>
 
-    <form>
+    <form method="post" action="/login" id="form">
         <h1>Регистрация</h1>
         <div class="reg">
             <label>Логин</label>
-            <input type="text">
+            <input id="loginInp" type="text" name="username">
         </div>
         <div class="reg">
             <label>Пароль</label>
-            <input type="password">
+            <input id="passInp" type="password" name="password">
         </div>
         <div class="reg">
             <label>Повторите пароль</label>
-            <input type="password">
+            <input id="passInpAgn" type="password" name="passAng">
         </div>
         <a href="otherpage.html">Забыли пароль?</a>
         <div class="reg">
-            <button>Зарегестрироваться</button>
+            <button type="submit" onclick="isValid()">Зарегестрироваться</button>
         </div>
         <label>Темная тема<input type="checkbox" checked> </label>
+        <script src="script.js"></script>
     </form>
+
 </center>
 </body>
 </html>
