@@ -3,8 +3,19 @@ import smallAsteroid from '../../PNG/SmallAsteroid.png'
 import middleAsteroid from '../../PNG/MiddleAsteroid.png'
 import bigAsteroid from '../../PNG/BigAsteroid.png'
 import dino from '../../PNG/Dino.png'
+import {useContext} from "react";
+import {context} from "../../App";
 
 export function Asteroid (props) {
+    const {state, dispatch} = useContext(context);
+
+    function DestroyArray () {
+        dispatch({
+            payload: {name: props.name, date: props.date, distance: props.distance, size: props.size, danger: props.danger, distanceMode: state.distanceMode},
+            type: 'Destroy'
+        });
+    }
+
     return (
         <div className={styles.center}>
             <div className={props.danger==="не опасен"?"cardGreen":"cardRed"}>
@@ -35,7 +46,7 @@ export function Asteroid (props) {
                     {props.danger}
                 </label>
                 <div className={styles.button}>
-                    <button className={styles.destroy}>На уничтожение</button>
+                    <button className={styles.destroy} onClick={DestroyArray}>На уничтожение</button>
                 </div>
             </div>
         </div>
