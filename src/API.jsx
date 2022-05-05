@@ -21,13 +21,13 @@ export function URL () {
 }
 
 export function AsteroidsArray (data) {
-    let AstArray = [];
+    let array = [];
     for(let Date in data.near_earth_objects)
     {
         for(let Name in data.near_earth_objects[Date])
         {
             let asteroid_data = data.near_earth_objects[Date][Name];
-            AstArray.push ({
+            array.push ({
                 name: asteroid_data.name,
                 date: asteroid_data.close_approach_data[0].close_approach_date,
                 distance: asteroid_data.close_approach_data[0].miss_distance.kilometers.toFixed(2),
@@ -36,6 +36,6 @@ export function AsteroidsArray (data) {
             });
         }
     }
-    return AstArray;
+    return array;
 }
 
